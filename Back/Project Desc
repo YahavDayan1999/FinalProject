@@ -1,0 +1,31 @@
+i want to build an app for ordering concert tickets with 2 sides, admin and customer register,login pages The client has the ability to search concerts by name,location and choose seats in order to order. Then he can checkout (not a real checkout, for educational purposes) The admin can create a location, and an artist and then The admin has the ability to then create a concert, choosing the number of rows and seats for each row and the location of the concert from a list and the artist from a list and price of ticket, and there is an option to "Suggest price" based on other concerts.
+
+The admin can see the orders of customers in sepearage page
+
+Make all the frontend frunctionality in react vite not nextjs with all the functions to make server calls themselves left empty for us to just receive the input and we will complete it
+
+make it in typescript and type evertyhing based on the types im giving here: the app name is Smart Event Management System (SEMS) class Client(BaseModel): name: str email: str password: str passport_id: str is_admin: bool = False
+
+class LoginRequest(BaseModel): passport_id: str password: str
+
+class ClientPurchase(BaseModel): client_id: str amount: float
+
+class Venue(BaseModel): name: str capacity: int
+
+class Artist(BaseModel): name: str genre: str
+
+class Show(BaseModel): artist_id: str venue_id: str base_price: float date: str
+
+class UserCreate(BaseModel): name: str email: str password: str client_id: str is_admin: bool = False
+
+class VenueCreate(BaseModel): name: str
+
+class VenueUpdate(BaseModel): name: str
+
+class ArtistCreate(BaseModel): name: str genre: str
+
+class ArtistUpdate(BaseModel): name: str genre: str
+
+class ShowCreate(BaseModel): artist_id: str venue_id: str price: float date: str
+
+class ShowUpdate(BaseModel): artist_id: str venue_id: str price: float date: str
